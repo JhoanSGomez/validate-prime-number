@@ -1,0 +1,5 @@
+org\example\controller\PrimeController.class
+org\example\dto\InvalidNumberException.class
+org\example\service\PrimeService.class
+org\example\exceptions\GlobalExceptionHandler.class
+org\example\Main.class
