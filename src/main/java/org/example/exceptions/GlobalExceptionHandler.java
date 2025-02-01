@@ -1,0 +1,17 @@
+package org.example.exceptions;
+
+import org.example.dto.InvalidNumberException;
+import org.example.dto.ResponseDto;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(InvalidNumberException.class)
+    public ResponseEntity<ResponseDto> handleInvalidNumberException(InvalidNumberException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDto(ex.getMessage()));
+    }
+}
